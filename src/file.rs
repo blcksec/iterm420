@@ -33,7 +33,7 @@ impl std::fmt::Display for Dimension {
 
 /// A builder for drawing images in the terminal
 /// ```rust,no_run
-/// use iterm2::{Dimension, File};
+/// use iterm420::{Dimension, File};
 ///
 /// File::read("path/to/some/image.png")?
 ///     .height(Dimension::Cells(14))

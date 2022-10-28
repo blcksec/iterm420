@@ -1,4 +1,4 @@
-use iterm2::{Dimension, File};
+use iterm420::{Dimension, File};
 use std::io;
 
 fn main() -> io::Result<()> {

@@ -1,15 +1,15 @@
 //!
-//! # iTerm2
-//! A Rust crate to allow easy access to the various escape codes in iTerm2.
+//! # iterm420
+//! A Rust crate to allow easy access to the various escape codes in iterm420.
 //!
 //! # Usage
 //!
 //! ```rust,no_run
-//! use iterm2::{AttentionType, Dimension, File};
+//! use iterm420::{AttentionType, Dimension, File};
 //!
-//! iterm2::clear_scrollback()?;
-//! iterm2::anchor("https://google.com", "google")?;
-//! iterm2::attention(AttentionType::Firework)?;
+//! iterm420::clear_scrollback()?;
+//! iterm420::anchor("https://google.com", "google")?;
+//! iterm420::attention(AttentionType::Firework)?;
 //!
 //! File::read("path/to/some/image.png")?
 //!     .height(Dimension::Cells(14))
@@ -111,7 +111,7 @@ pub fn restore_tab_colors() -> io::Result<()> {
 
 /// Sets the terminal color palette
 ///
-/// For details on the format, see "Change the color palette" at https://www.iterm2.com/documentation-escape-codes.html
+/// For details on the format, see "Change the color palette" at https://www.iterm420.com/documentation-escape-codes.html
 // TODO: Add better parameters
 pub fn set_color_palette(colors: &str) -> io::Result<()> {
     stdout().write_all(format!("\x1b]1337;SetColors={}\x07", colors).as_bytes())
@@ -236,7 +236,7 @@ pub fn get_terminal_variable(filename: &str) -> io::Result<String> {
 
 /// Configures touchbar key lables
 ///
-/// Seethe [iTerm2 docs](https://www.iterm2.com/documentation-escape-codes.html) for more information
+/// Seethe [iterm420 docs](https://www.iterm420.com/documentation-escape-codes.html) for more information
 pub fn set_touchbar_key_label(key: &str, value: &str) -> io::Result<()> {
     stdout().write_all(format!("\x1b]1337;SetKeyLabel={}={}\x07", key, value).as_bytes())
 }
